@@ -19,7 +19,7 @@ const IPAddress remote_ip(192, 168, 111, 33);
 void setup() {
     Serial.begin(115200);
     pixels.begin(); // Init NeoPixel library
-    pixels.setPixelColor(0, pixels.Color(10,0,0));
+    pixels.setPixelColor(0, pixels.Color(20,0,0));
     pixels.show();
 
     delay (2000);
@@ -29,7 +29,7 @@ void setup() {
     wifiManager.autoConnect("AutoConnectAP");
 
     Serial.println("WiFi connected");
-    pixels.setPixelColor(0, pixels.Color(0,12,0));
+    pixels.setPixelColor(0, pixels.Color(0,20,0));
     pixels.show();
 }
 
@@ -45,7 +45,7 @@ void loop() {
 
         if (Ping.averageTime() < 25)
             { // green
-            pixels.setPixelColor(0, pixels.Color(0,12,0));
+            pixels.setPixelColor(0, pixels.Color(0,20,0));
             }
         else
             { // yellow
@@ -54,7 +54,7 @@ void loop() {
         }
     else {
         Serial.println("Error :(");
-        pixels.setPixelColor(0, pixels.Color(10,0,0));
+        pixels.setPixelColor(0, pixels.Color(20,0,0));
         }
 
     pixels.show();
