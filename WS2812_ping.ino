@@ -16,7 +16,7 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ80
 void setup() {
     Serial.begin(115200);
     pixels.begin(); // Init NeoPixel library
-    pixels.setPixelColor(0, pixels.Color(20,0,0));
+    pixels.setPixelColor(0, pixels.Color(10,0,0));
     pixels.show();
 
     delay (2000);
@@ -26,7 +26,7 @@ void setup() {
     wifiManager.autoConnect("AutoConnectAP");
 
     Serial.println("WiFi connected");
-    pixels.setPixelColor(0, pixels.Color(0,30,0));
+    pixels.setPixelColor(0, pixels.Color(0,12,0));
     pixels.show();
 }
 
