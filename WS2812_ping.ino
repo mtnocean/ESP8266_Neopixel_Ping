@@ -34,11 +34,11 @@ void setup() {
 }
 
 void loop() {
-    //delay(1000);
+    delay(1000);
     Serial.print("Pinging ip ");
     Serial.println(remote_ip);
 
-    if(Ping.ping(remote_ip,2)) 
+    if(Ping.ping(remote_ip,1)) 
         { // success
         Serial.print(Ping.averageTime());
         Serial.println(" ms.");
