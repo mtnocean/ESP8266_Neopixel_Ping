@@ -18,7 +18,9 @@ CRGB leds[NUM_LEDS];
 
 #include "ESP8266Ping.h"         //https://github.com/dancol90/ESP8266Ping
 
-const IPAddress remote_ip(192, 168, 111, 23);
+//const IPAddress remote_ip(192, 168, 111, 23);
+//const char* remote_host = "www.google.com";
+const char* remote_host = "192.168.111.23";
 
 void setup() {
     Serial.begin(115200);
@@ -43,9 +45,9 @@ void setup() {
 void loop() {
     delay(1000);
     Serial.print("Pinging ip ");
-    Serial.println(remote_ip);
+    Serial.println(remote_host);
 
-    if(Ping.ping(remote_ip,1)) 
+    if(Ping.ping(remote_host,1)) 
         { // success
         Serial.print(Ping.averageTime());
         Serial.println(" ms.");
