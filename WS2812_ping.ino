@@ -12,9 +12,9 @@
 #define NUMPIXELS      16
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-#include "ESP8266Ping.h"
+#include "ESP8266Ping.h"         //https://github.com/dancol90/ESP8266Ping
 
-const IPAddress remote_ip(192, 168, 111, 33);
+const IPAddress remote_ip(192, 168, 111, 23);
 
 void setup() {
     Serial.begin(115200);
