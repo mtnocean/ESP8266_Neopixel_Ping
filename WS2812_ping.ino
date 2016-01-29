@@ -7,10 +7,14 @@
 #define SERIAL_DEBUG true
 #include <SerialDebug.h>         //https://github.com/rlogiacco/MicroDebug
 
-#include <Adafruit_NeoPixel.h>   //https://github.com/adafruit/Adafruit_NeoPixel
-#define PIN            15
-#define NUMPIXELS      16
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+#include <FastLED.h>             //https://github.com/FastLED/FastLED
+#define DATA_PIN    13
+#define CLOCK_PIN   14
+#define NUM_LEDS    32
+#define CHIPSET     WS2812B
+#define COLOR_ORDER GRB
+#define BRIGHTNESS  16
+CRGB leds[NUM_LEDS];
 
 #include "ESP8266Ping.h"         //https://github.com/dancol90/ESP8266Ping
 
@@ -18,10 +22,12 @@ const IPAddress remote_ip(192, 168, 111, 23);
 
 void setup() {
     Serial.begin(115200);
-    pixels.begin(); // Init NeoPixel library
-    pixels.setPixelColor(0, pixels.Color(20,0,0));
-    pixels.show();
 
+    FastLED.addLeds<CHIPSET, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
+    // FastLED.addLeds<CHIPSET, DATA_PIN, CLOCK_PIN, COLOR_ORDER>(leds, NUM_LEDS);
+    FastLED.setBrightness( BRIGHTNESS );
+    leds[0] = CRGB(CRGB::Red); 
+    FastLED.show();
     delay (2000);
 
     WiFiManager wifiManager;
@@ -29,8 +35,9 @@ void setup() {
     wifiManager.autoConnect("AutoConnectAP");
 
     Serial.println("WiFi connected");
-    pixels.setPixelColor(0, pixels.Color(0,20,0));
-    pixels.show();
+    leds[0] = CRGB(CRGB::Green); 
+    FastLED.show();
+    delay (2000);
 }
 
 void loop() {
@@ -45,17 +52,17 @@ void loop() {
 
         if (Ping.averageTime() < 25)
             { // green
-            pixels.setPixelColor(0, pixels.Color(0,20,0));
+        leds[0] = CRGB(CRGB::Green); 
             }
         else
             { // yellow
-            pixels.setPixelColor(0, pixels.Color(22,22,0)); 
+        leds[0] = CRGB(CRGB::Yellow); 
             }
         }
     else {
         Serial.println("Error :(");
-        pixels.setPixelColor(0, pixels.Color(20,0,0));
+        leds[0] = CRGB(CRGB::Red); 
         }
 
-    pixels.show();
+    FastLED.show();
 }
