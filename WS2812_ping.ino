@@ -14,6 +14,8 @@
 #define CHIPSET     WS2812B
 #define COLOR_ORDER GRB
 #define BRIGHTNESS  16
+#define TEMPERATURE Tungsten100W
+#define CORRECTION	TypicalSMD5050
 CRGB leds[NUM_LEDS];
 
 #include "ESP8266Ping.h"         //https://github.com/dancol90/ESP8266Ping
@@ -28,6 +30,8 @@ void setup() {
     FastLED.addLeds<CHIPSET, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
     // FastLED.addLeds<CHIPSET, DATA_PIN, CLOCK_PIN, COLOR_ORDER>(leds, NUM_LEDS);
     FastLED.setBrightness( BRIGHTNESS );
+    FastLED.setTemperature( TEMPERATURE );
+    FastLED.setCorrection( CORRECTION );
     leds[0] = CRGB(CRGB::Red); 
     FastLED.show();
     delay (2000);
