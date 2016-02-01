@@ -73,9 +73,8 @@ void setup() {
 void setIndicator (const int number)
 {
     if(Ping.ping(remote_host[number],1)) {
-        Serial.print(Ping.averageTime());
-        Serial.println(" ms.");
-
+        DEBUG(Ping.averageTime(), "ms.", remote_host[number]);
+        
         if (Ping.averageTime() < 25)
         	leds[number] = CRGB(CRGB::Green);
         else if (Ping.averageTime() < 45)
@@ -96,6 +95,8 @@ void setIndicator (const int number)
 void loop() {
     for (int i=0; i < (sizeof(remote_host) / sizeof(remote_host[ 0 ])); i++)
     	setIndicator (i);
+    
+    DEBUG("- - - - - - -");
 
     FastLED.show();
     FastLED.delay(1000);
