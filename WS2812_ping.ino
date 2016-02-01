@@ -13,8 +13,8 @@
 #define NUM_LEDS    32
 #define CHIPSET     WS2812B
 #define COLOR_ORDER GRB
-#define BRIGHTNESS  16
-#define TEMPERATURE	Tungsten100W
+#define BRIGHTNESS  32
+#define TEMPERATURE	Halogen
 #define CORRECTION	TypicalSMD5050
 CRGB leds[NUM_LEDS];
 
@@ -77,8 +77,8 @@ void setIndicator (const int number)
         
         if (Ping.averageTime() < 25)
         	leds[number] = CRGB(CRGB::Green);
-        else if (Ping.averageTime() < 45)
-        	leds[number] = CRGB(CRGB::LawnGreen);
+        else if (Ping.averageTime() < 40)
+        	leds[number] = CRGB(55,230,0);
         else if (Ping.averageTime() < 65)
         	leds[number] = CRGB(CRGB::Yellow);
         else if (Ping.averageTime() < 85)
