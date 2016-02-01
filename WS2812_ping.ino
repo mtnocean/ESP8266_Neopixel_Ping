@@ -25,18 +25,22 @@ CRGB leds[NUM_LEDS];
 const char* remote_host[] = {
 	"192.168.111.1",
 	"c-71-56-236-1.hsd1.co.comcast.net",
-	//"xe-9-1-3-sur02.boulder.co.denver.comcast.net",
+	"xe-9-1-3-sur02.boulder.co.denver.comcast.net",
 	"ae-10-sur03.boulder.co.denver.comcast.net",
 	"ae-29-ar01.denver.co.denver.comcast.net",
-	//"be-11719-cr02.denver.co.ibone.comcast.net",
-	//"be-11724-cr02.dallas.tx.ibone.comcast.net",
-	//"be-20-pe01.houston.tx.ibone.comcast.net",
-	//"as8075-1.2001sixthave.wa.ibone.comcast.net",
-	//"oommco.com",
-	"www.comcast.net",
-	"www.facebook.com",
-	"www.live.com",
-	"www.google.com",
+	"be-33652-cr01.1601milehigh.co.ibone.comcast.net",
+	"be-11719-cr02.denver.co.ibone.comcast.net",
+	"hu-0-10-0-6-pe02.910fifteenth.co.ibone.comcast.net",
+	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+	"www.comcast.net", NULL,
+	"www.live.com", NULL,
+	"www.google.com", NULL,
+	"www.facebook.com", NULL,
+	NULL,
+	"www.youtube.com", NULL,
+	"www.twitter.com", NULL,
+	"www.apple.com", NULL,
+	"www.microsoft.com", NULL
 	};
 
 void setup() {
@@ -78,24 +82,28 @@ void setup() {
 
 void setIndicator (const int number)
 {
-    if(Ping.ping(remote_host[number],1)) {
-        DEBUG(Ping.averageTime(), "ms.", remote_host[number]);
-        
-        if (Ping.averageTime() < 25)
-        	leds[number] = CRGB(CRGB::Green);
-        else if (Ping.averageTime() < 40)
-        	leds[number] = CRGB(55,230,0);
-        else if (Ping.averageTime() < 65)
-        	leds[number] = CRGB(CRGB::Yellow);
-        else if (Ping.averageTime() < 85)
-        	leds[number] = CRGB(CRGB::OrangeRed);
-        else
-        	leds[number] = CRGB(CRGB::Red);
-        }
-    else {
-        Serial.println("Error :(");
-        leds[number] = CRGB(CRGB::Red); 
-        }
+    if(remote_host[number] != NULL)
+    	{
+		if(Ping.ping(remote_host[number],1)) 
+			{
+			DEBUG(Ping.averageTime(), "ms.", remote_host[number]);
+		
+			if (Ping.averageTime() < 25)
+				leds[number] = CRGB(CRGB::Green);
+			else if (Ping.averageTime() < 40)
+				leds[number] = CRGB(55,230,0);
+			else if (Ping.averageTime() < 65)
+				leds[number] = CRGB(CRGB::Yellow);
+			else if (Ping.averageTime() < 85)
+				leds[number] = CRGB(CRGB::OrangeRed);
+			else
+				leds[number] = CRGB(CRGB::Red);
+			}
+		else {
+			Serial.println("Error :(");
+			leds[number] = CRGB(CRGB::Red); 
+			}
+		}
 }
 
 void loop() {
