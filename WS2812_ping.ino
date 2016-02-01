@@ -60,14 +60,20 @@ void setup() {
     FastLED.show();
     delay (2000);
     
-    leds[24] = CRGB(CRGB::Green); 
-    leds[25] = CRGB(CRGB::LawnGreen); 
-    leds[26] = CRGB(CRGB::YellowGreen); 
-    leds[27] = CRGB(CRGB::Yellow); 
-    leds[28] = CRGB(CRGB::Orange); 
-    leds[29] = CRGB(CRGB::OrangeRed); 
-    leds[30] = CRGB(CRGB::DarkOrange); 
-    leds[31] = CRGB(CRGB::Red); 
+//     leds[24] = CRGB(CRGB::Green); 
+//     leds[25] = CRGB(55,255,0); 
+//     leds[26] = CRGB(CRGB::LawnGreen); 
+//     leds[27] = CRGB(CRGB::Yellow); 
+//     leds[28] = CRGB(CRGB::Orange); 
+//     leds[29] = CRGB(CRGB::DarkOrange); 
+//     leds[30] = CRGB(CRGB::OrangeRed); 
+//     leds[31] = CRGB(CRGB::Red); 
+//     
+//     leds[16] = CRGB(CRGB::Green); 
+//     leds[17] = CRGB(CRGB::LawnGreen); 
+//     leds[18] = CRGB(CRGB::Yellow); 
+//     leds[19] = CRGB(CRGB::OrangeRed); 
+//     leds[20] = CRGB(CRGB::Red); 
 }
 
 void setIndicator (const int number)
