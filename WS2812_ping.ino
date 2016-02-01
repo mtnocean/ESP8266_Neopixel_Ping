@@ -99,5 +99,5 @@ void loop() {
     DEBUG("- - - - - - -");
 
     FastLED.show();
-    FastLED.delay(1000);
+    FastLED.delay(2000);
 }
