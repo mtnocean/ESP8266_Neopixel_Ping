@@ -13,7 +13,7 @@
 #define NUM_LEDS    32
 #define CHIPSET     WS2812B
 #define COLOR_ORDER GRB
-#define BRIGHTNESS  32
+#define BRIGHTNESS  16
 #define TEMPERATURE	Halogen
 #define CORRECTION	TypicalSMD5050
 CRGB leds[NUM_LEDS];
@@ -32,9 +32,9 @@ const char* remote_host[] = {
 	"be-11719-cr02.denver.co.ibone.comcast.net",
 	"hu-0-10-0-6-pe02.910fifteenth.co.ibone.comcast.net",
 	NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+	"www.google.com", NULL,
 	"www.comcast.net", NULL,
 	"www.live.com", NULL,
-	"www.google.com", NULL,
 	"www.facebook.com", NULL,
 	NULL,
 	"www.youtube.com", NULL,
@@ -83,7 +83,6 @@ void setup() {
 void setIndicator (const int number)
 {
     if(remote_host[number] != NULL)
-    	{
 		if(Ping.ping(remote_host[number],1)) 
 			{
 			DEBUG(Ping.averageTime(), "ms.", remote_host[number]);
@@ -103,7 +102,6 @@ void setIndicator (const int number)
 			Serial.println("Error :(");
 			leds[number] = CRGB(CRGB::Red); 
 			}
-		}
 }
 
 void loop() {
