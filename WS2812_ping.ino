@@ -14,7 +14,7 @@
 #define CHIPSET     WS2812B
 #define COLOR_ORDER GRB
 #define BRIGHTNESS  16
-#define TEMPERATURE Tungsten100W
+#define TEMPERATURE	Tungsten100W
 #define CORRECTION	TypicalSMD5050
 CRGB leds[NUM_LEDS];
 
@@ -22,7 +22,19 @@ CRGB leds[NUM_LEDS];
 
 //const IPAddress remote_ip(192, 168, 111, 23);
 //const char* remote_host = "www.google.com";
-const char* remote_host = "192.168.111.23";
+const char* remote_host[] = {
+	"192.168.111.1",
+	"c-71-56-236-1.hsd1.co.comcast.net",
+	//"xe-9-1-3-sur02.boulder.co.denver.comcast.net",
+	"ae-10-sur03.boulder.co.denver.comcast.net",
+	"ae-29-ar01.denver.co.denver.comcast.net",
+	//"be-11719-cr02.denver.co.ibone.comcast.net",
+	//"be-11724-cr02.dallas.tx.ibone.comcast.net",
+	//"be-20-pe01.houston.tx.ibone.comcast.net",
+	"as8075-1.2001sixthave.wa.ibone.comcast.net",
+	"oommco.com",
+	"www.google.com"
+	};
 
 void setup() {
     Serial.begin(115200);
@@ -44,31 +56,44 @@ void setup() {
     leds[0] = CRGB(CRGB::Green); 
     FastLED.show();
     delay (2000);
+    
+    leds[24] = CRGB(CRGB::Green); 
+    leds[25] = CRGB(CRGB::LawnGreen); 
+    leds[26] = CRGB(CRGB::YellowGreen); 
+    leds[27] = CRGB(CRGB::Yellow); 
+    leds[28] = CRGB(CRGB::Orange); 
+    leds[29] = CRGB(CRGB::OrangeRed); 
+    leds[30] = CRGB(CRGB::DarkOrange); 
+    leds[31] = CRGB(CRGB::Red); 
 }
 
-void loop() {
-    delay(1000);
-    Serial.print("Pinging ip ");
-    Serial.println(remote_host);
-
-    if(Ping.ping(remote_host,1)) 
-        { // success
+void setIndicator (const int number)
+{
+    if(Ping.ping(remote_host[number],1)) {
         Serial.print(Ping.averageTime());
         Serial.println(" ms.");
 
         if (Ping.averageTime() < 25)
-            { // green
-        leds[0] = CRGB(CRGB::Green); 
-            }
+        	leds[number] = CRGB(CRGB::Green);
+        else if (Ping.averageTime() < 45)
+        	leds[number] = CRGB(CRGB::LawnGreen);
+        else if (Ping.averageTime() < 65)
+        	leds[number] = CRGB(CRGB::Yellow);
+        else if (Ping.averageTime() < 85)
+        	leds[number] = CRGB(CRGB::OrangeRed);
         else
-            { // yellow
-        leds[0] = CRGB(CRGB::Yellow); 
-            }
+        	leds[number] = CRGB(CRGB::Red);
         }
     else {
         Serial.println("Error :(");
-        leds[0] = CRGB(CRGB::Red); 
+        leds[number] = CRGB(CRGB::Red); 
         }
+}
+
+void loop() {
+    for (int i=0; i < (sizeof(remote_host) / sizeof(remote_host[ 0 ])); i++)
+    	setIndicator (i);
 
     FastLED.show();
+    FastLED.delay(1000);
 }
