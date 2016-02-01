@@ -33,7 +33,8 @@ const char* remote_host[] = {
 	//"be-20-pe01.houston.tx.ibone.comcast.net",
 	"as8075-1.2001sixthave.wa.ibone.comcast.net",
 	"oommco.com",
-	"www.google.com"
+	"www.google.com",
+	"www.comcast.net",
 	};
 
 void setup() {
