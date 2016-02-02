@@ -43,6 +43,7 @@ const char* remote_host[] = {
 	"www.microsoft.com", NULL
 	};
 
+
 void setup() {
     Serial.begin(115200);
 
@@ -64,6 +65,7 @@ void setup() {
     FastLED.show();
     delay (2000);
 }
+
 
 void setIndicator (const int number)
 {
@@ -89,11 +91,20 @@ void setIndicator (const int number)
 			}
 }
 
+
 void loop() {
-    for (int i=0; i < (sizeof(remote_host) / sizeof(remote_host[ 0 ])); i++)
-    	setIndicator (i);
-    
-    DEBUG("- - - - - - -");
+	for (int i=0; i < (sizeof(remote_host) / sizeof(remote_host[ 0 ])); i++)
+		if (WiFi.status() == WL_CONNECTED)
+			setIndicator (i);	
+			
+	DEBUG("- - - - - - -");
+
+	if (WiFi.status() != WL_CONNECTED)
+		{
+		Serial.println("Error WiFi not connected");
+		FastLED.clear();
+		leds[0] = CRGB(CRGB::Red); 
+		}
 
     FastLED.show();
     FastLED.delay(2000);
