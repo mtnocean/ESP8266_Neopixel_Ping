@@ -11,12 +11,14 @@ on a 4x8 RGB LED array
 Adafruit Feather HUZZAH with ESP8266 WiFi
 [https://www.adafruit.com/products/2821]
 (https://www.adafruit.com/products/2821)
-!(/images/ESP8266_Feather_Huzzah.png)
+![GitHub Logo](/images/ESP8266_Feather_Huzzah.png)
+
 
 NeoPixel FeatherWing - 4x8 RGB LED
 [https://www.adafruit.com/products/2945]
 (https://www.adafruit.com/products/2945)
-!(/images/NeoPixel_FeatherWing.png)
+![GitHub Logo](/images/NeoPixel_FeatherWing.png)
+
 
 The WS2812 LED data is sent on pin 13
 
