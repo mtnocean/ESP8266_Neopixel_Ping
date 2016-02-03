@@ -3,6 +3,8 @@
 
 Simultaneously displays the Ping status of Multiple IP addresses 
 on a 4x8 RGB LED array
+
+![GitHub Logo](/images/animation.gif)
 	
 ###Hardware
 
