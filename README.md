@@ -33,8 +33,12 @@ The  list of IP addresses or domain names is fixed at compile time.
 
 ## Credits
 
+##### ESP8266Ping - Ping library for ESP8266
+The actual ping code 
+Copyright (c) 2015 Daniele Colanardi.  
+https://github.com/dancol90/ESP8266Ping
+
 ##### Arduino-Ping
-The actual ping code  
 Copyright (c) 2010 by Blake Foster  
 blfoster@vassar.edu  
 https://github.com/BlakeFoster/Arduino-Ping
