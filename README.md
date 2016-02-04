@@ -7,7 +7,7 @@ on a 4x8 RGB LED array
 ![](/images/Ping_Animation.gif)
 
 ## Software
-Every two seconds the software pings a list of IP addresses or domain names. The response times of each ping are indicated on the LEDs, one LED per item in the list. Green is for fast response, yellow for slow , red for none.
+Every two seconds the software pings a list of IP addresses or domain names. The response times of each ping are indicated on the LEDs, one LED per item in the list. Green is for fast, green-yellow and yellow for slower, orange and red for slow to none.
 
 Here I have set the top line to be my local routers. The first LED is my WiFi router, then the LEDs to the right of it are routers of my ISP. The LEDs on the bottom are specific websites. Any LED can be left blank by entering a NULL item in the list.
 	
@@ -27,6 +27,9 @@ The WS2812 LED data is sent on pin 13
 The jumper on the back of the wing must be cut then another jumper 
 must be shorted with a blob of solder. I used pin 13 
 ![](/images/NeoPixel_FeatherWing_Back.png)
+
+## Issues
+The  list of IP addresses or domain names is fixed at compile time.
 
 ## Credits
 
