@@ -31,13 +31,15 @@ must be shorted with a blob of solder. I used pin 13
 ## Credits
 
 ##### Arduino-Ping
-Where all the actual ping code came from  
+The actual ping code  
 Copyright (c) 2010 by Blake Foster  
 blfoster@vassar.edu  
 https://github.com/BlakeFoster/Arduino-Ping
 
 ##### WiFi Manager
+Controls the connection to the WiFi router and the password  
 https://github.com/tzapu/WiFiManager
 
 ##### FastLED
+Controls the LEDs  
 https://github.com/FastLED/FastLED
