@@ -25,7 +25,7 @@ must be shorted with a blob of solder. I used pin 13
 
 ###Credits
 
-####Arduino-Ping
-Copyright (c) 2010 by Blake Foster 
-blfoster@vassar.edu
+#####Arduino-Ping
+Copyright (c) 2010 by Blake Foster  
+blfoster@vassar.edu  
 https://github.com/BlakeFoster/Arduino-Ping
