@@ -23,9 +23,10 @@ The jumper on the back of the wing must be cut then another jumper
 must be shorted with a blob of solder. I used pin 13 
 ![](/images/NeoPixel_FeatherWing_Back.png)
 
-###Credits
+##Credits
 
 #####Arduino-Ping
+Where all the actual ping code came from  
 Copyright (c) 2010 by Blake Foster  
 blfoster@vassar.edu  
 https://github.com/BlakeFoster/Arduino-Ping
