@@ -2,11 +2,11 @@
 ### Multi IP Address Ping Indicator
 
 Simultaneously displays the Ping status of Multiple IP addresses 
-on a 4x8 RGB LED array
+on a 4x8 RGB LED array that updates every two seconds
 
-### Why???
+### "Hey WiFi's not working!"
 
-"Hey WiFi's not working!" — Now when somebody says that, you can have an indicator to show you what is really happening
+Now when somebody says that, you can have an indicator to show you what's happening. All red LEDs means your internet connection really is down. Watch your internet service quality change, even when you are not actively online
 
 ![](/images/Ping_Animation.gif)
 
