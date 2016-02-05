@@ -25,11 +25,11 @@ NeoPixel FeatherWing - 4x8 RGB LED
 https://www.adafruit.com/products/2945
 ![](/images/NeoPixel_FeatherWing.png)
 
-The WS2812 LED data is sent on pin 13
+These are WS2812 LEDs. The data signal is sent on pin 13 of the ESP8266.
 
 **Note**: The default pin on the FeatherWing does not work with the ESP8266. 
 The jumper on the back of the wing must be cut then another jumper 
-must be shorted with a blob of solder. I used pin 13 
+must be shorted with a blob of solder. I used pin 13.
 ![](/images/NeoPixel_FeatherWing_Back.png)
 
 ## Issues
@@ -38,7 +38,7 @@ The  list of IP addresses or domain names is fixed at compile time.
 ## Credits
 
 ##### ESP8266Ping - Ping library for ESP8266
-The actual ping code 
+The actual ping code  
 Copyright (c) 2015 Daniele Colanardi.  
 https://github.com/dancol90/ESP8266Ping
 
@@ -48,7 +48,7 @@ blfoster@vassar.edu
 https://github.com/BlakeFoster/Arduino-Ping
 
 ##### WiFi Manager
-Controls the connection to the WiFi router and the password  
+Controls the connection to the WiFi router and handles the SSID and password  
 https://github.com/tzapu/WiFiManager
 
 ##### FastLED
