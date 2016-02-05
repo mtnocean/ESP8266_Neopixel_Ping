@@ -32,25 +32,25 @@ The jumper on the back of the wing must be cut then another jumper
 must be shorted with a blob of solder. I used pin 13.
 ![](/images/NeoPixel_FeatherWing_Back.png)
 
-## Issues
+## Limitations
 The  list of IP addresses or domain names is fixed at compile time.
 
-## Credits
+# Credits
 
-##### ESP8266Ping - Ping library for ESP8266
+#### ESP8266Ping - Ping library for ESP8266
 The actual ping code  
 Copyright (c) 2015 Daniele Colanardi.  
 https://github.com/dancol90/ESP8266Ping
 
-##### Arduino-Ping
+#### Arduino-Ping
 Copyright (c) 2010 by Blake Foster  
 blfoster@vassar.edu  
 https://github.com/BlakeFoster/Arduino-Ping
 
-##### WiFi Manager
+#### WiFi Manager
 Controls the connection to the WiFi router and handles the SSID and password  
 https://github.com/tzapu/WiFiManager
 
-##### FastLED
+#### FastLED
 Controls the LEDs  
 https://github.com/FastLED/FastLED
