@@ -4,9 +4,9 @@
 Simultaneously displays the Ping status of Multiple IP addresses 
 on a 4x8 RGB LED array
 
-### "Hey WiFi's not working!"  
+### Why???
 
-Now when somebody says that, you can have an indicator show you exactly what is really happening
+"Hey WiFi's not working!" — Now when somebody says that, you can have an indicator to show you what is really happening
 
 ![](/images/Ping_Animation.gif)
 
