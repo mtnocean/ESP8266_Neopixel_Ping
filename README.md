@@ -88,7 +88,7 @@ const char* remote_host[] = {
 
 Once you list the sites, compile and upload to the ESP8266
 
-## Limitations
+# Limitations
 The  list of IP addresses or domain names is fixed at compile time.
 
 # Credits
